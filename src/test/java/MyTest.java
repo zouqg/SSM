@@ -1,5 +1,7 @@
+import com.zou.dao.BookMapper;
 import com.zou.pojo.Books;
 import com.zou.service.BookService;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,5 +16,13 @@ public class MyTest {
         for (Object book : books) {
             System.out.println(book);
         }
+    }
+
+    @Test
+    public void test(){
+       ApplicationContext context = new ClassPathXmlApplicationContext("spring-dao.xml");
+        BookService bean = context.getBean(BookService.class);
+        System.out.println(bean.queryAllBook());
+
     }
 }

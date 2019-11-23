@@ -12,7 +12,7 @@
 
     <delete id="deleteBookById" parameterType="int">
         delete from sampledb.books
-        where bookId=#{bookID}
+        where bookId=#{bookId}
     </delete>
 
     <update id="updateBook" parameterType="Books">
@@ -28,6 +28,10 @@
 
     <select id="queryAllBook" resultType="Books">
         select *from sampledb.books
+    </select>
+
+    <select id="queryBookByName" resultType="Books">
+        select *from books where bookName=#{bookName};
     </select>
 
 </mapper>

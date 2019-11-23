@@ -50,6 +50,4 @@ c3p0  自动化操作（自动的加载配置文件 并且设置到对象里面�
         <!-- 给出需要扫描Dao接口包 -->
         <property name="basePackage" value="com.zou.dao"/>
     </bean>
-
-
 </beans>

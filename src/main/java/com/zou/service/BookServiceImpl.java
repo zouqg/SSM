@@ -3,8 +3,10 @@ package com.zou.service;
 import com.zou.dao.BookMapper;
 import com.zou.pojo.Books;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 public class BookServiceImpl implements BookService {
 
@@ -35,5 +37,10 @@ public class BookServiceImpl implements BookService {
 
     public List<Books> queryAllBook() {
         return bookMapper.queryAllBook();
+    }
+
+    @Override
+    public Books queryBookByName(String bookName) {
+        return bookMapper.queryBookByName(bookName);
     }
 }

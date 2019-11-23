@@ -14,3 +14,15 @@ insert into books(bookId,bookName,bookCounts,detail) values
 (1,'Java',1,'从入门到放弃'),
 (2,'MySQL',10,'从删库到跑路'),
 (3,'Linux',5,'从进门到进牢');
+
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut id="txPoint" expression="execution(* com.zou.dao.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
+    </aop:config>
